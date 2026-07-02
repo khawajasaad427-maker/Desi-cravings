@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="site-title-tag">Desi Cravings - Homemade Desi Food</title>
+    <!-- Tailwind CSS v4 -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Google Fonts Support -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@300;400;600;700&family=Poppins:wght@300;400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * { transition: background-color 0.3s ease, color 0.3s ease; }
+    </style>
+</head>
+<body id="body-layout" class="bg-gray-50 text-gray-800 font-['Poppins']">
+
+    <!-- Header / Navbar -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 id="nav-logo" class="text-2xl font-bold text-amber-600 tracking-wide">🌶️ Desi Cravings</h1>
+            <nav class="hidden md:flex space-x-6 font-medium">
+                <a href="#home" class="text-amber-600 dynamic-primary-text">Home</a>
+                <a href="#menu" class="hover:text-amber-600 transition dynamic-primary-hover-text">Our Menu</a>
+                <a href="#about-section" class="hover:text-amber-600 transition dynamic-primary-hover-text">About Us</a>
+            </nav>
+            <a href="#menu" class="bg-amber-500 hover:bg-amber-600 text-white px-5 py-2 rounded-full text-sm font-semibold transition shadow-md dynamic-primary-bg">View Menu</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-amber-50 py-16 md:py-24 dynamic-hero-bg">
+        <div class="container mx-auto px-4 text-center max-w-3xl">
+            <span id="hero-tag" class="bg-amber-100 text-amber-800 text-xs font-bold uppercase px-3 py-1 rounded-full">100% Fresh & Homemade</span>
+            <h2 id="hero-heading" class="text-4xl md:text-6xl font-extrabold text-gray-900 mt-4 leading-tight">Ghar Ka Khana, <span class="text-amber-600 dynamic-primary-text">Ghar Ke Pyar</span> Ke Sath</h2>
+            <p id="hero-subheading" class="text-gray-600 mt-4 text-lg">Laziz homemade parathas, authentic nihari, paye, aur chicken curry—ab aap ki dehleez par.</p>
+            <div class="mt-8">
+                <a href="#menu" class="bg-gray-900 hover:bg-gray-800 text-white px-8 py-3 rounded-xl font-semibold shadow-lg transition">Explore Menu 😋</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Menu Section -->
+    <section id="menu" class="container mx-auto px-4 py-16">
+        <div class="text-center mb-12">
+            <h3 id="menu-title" class="text-3xl font-bold text-gray-900">Aaj Ka Special Menu</h3>
+            <p id="menu-subtitle" class="text-gray-500 mt-2">Apna pasandida desi khana select karein aur quantity batayein</p>
+        </div>
+
+        <!-- Food Grid -->
+        <div id="food-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Dynamic Items Populate Here -->
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about-section" class="bg-white py-12 border-t border-gray-100">
+        <div class="container mx-auto px-4 text-center max-w-2xl">
+            <h3 class="text-2xl font-bold text-gray-900 mb-3">About Our Kitchen</h3>
+            <p id="about-text" class="text-gray-600 text-sm leading-relaxed">Hum pichle kaafi arsay se apne saaf-suthray kitchen me behtareen aur khalis masalon ke sath khana tayyar kar rahe hain. Standard aur zaiqa hamari pehli tarjeeh hai.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-8 border-t border-gray-800">
+        <div class="container mx-auto px-4 text-center">
+            <p id="footer-logo" class="text-white font-semibold mb-2">🌶️ Desi Cravings</p>
+            <p id="footer-text" class="text-sm">&copy; 2026 All Rights Reserved. Made with ❤️ for Food Lovers.</p>
+            
+            <!-- Admin Lock Button -->
+            <button onclick="checkAdminPassword()" class="mt-6 text-xs text-gray-700 hover:text-amber-500 transition cursor-pointer block mx-auto">
+                🔒 System Dashboard Login
+            </button>
+        </div>
+    </footer>
+
+    <!-- --- LIVE ADMIN PANEL CONTROL (PASSWORD PROTECTED) --- -->
+    <div id="admin-panel" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex justify-end">
+        <div class="bg-white w-full max-w-2xl h-full p-6 overflow-y-auto shadow-2xl flex flex-col justify-between">
+            <div>
+                <div class="flex justify-between items-center border-b pb-4 mb-6">
+                    <h2 class="text-2xl font-bold text-gray-900 flex items-center gap-2">🛠️ Website Manager Dashboard</h2>
+                    <button onclick="closeAdminPanel()" class="text-gray-400 hover:text-gray-600 text-2xl font-bold cursor-pointer">&times;</button>
+                </div>
+
+                <!-- Global Styling & Security Settings -->
+                <div class="bg-gray-50 p-4 rounded-xl mb-6 border border-gray-200">
+                    <h3 class="font-bold text-gray-800 mb-3 text-sm uppercase tracking-wider">🎨 Style, Branding & Security</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-3">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-600 mb-1">Primary Theme Color</label>
+                            <input type="color" id="settings-primary-color" onchange="updateGlobalStyles()" class="w-full h-9 p-1 rounded-md border bg-white cursor-pointer">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-600 mb-1">Global Font Style</label>
+                            <select id="settings-font" onchange="updateGlobalStyles()" class="w-full bg-white border rounded-md p-1.5 text-sm">
+                                <option value="Poppins">Poppins (Modern)</option>
+                                <option value="Roboto">Roboto (Clean)</option>
+                                <option value="Montserrat">Montserrat (Bold)</option>
+                                <option value="Inter">Inter (Minimalist)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-600 mb-1">WhatsApp Mobile Number</label>
+                            <input type="text" id="settings-whatsapp" placeholder="923406985205" class="w-full bg-white border rounded-md p-1.5 text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-600 mb-1">Change Admin Password</label>
+                            <input type="text" id="settings-password" placeholder="Set new password" class="w-full bg-white border rounded-md p-1.5 text-sm font-mono">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Header Customization -->
+                <div class="bg-gray-50 p-4 rounded-xl mb-6 border border-gray-200">
+                    <h3 class="font-bold text-gray-800 mb-3 text-sm uppercase tracking-wider">✍️ Homepage Typography Content</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-600 mb-1">Brand Name / Logo Text</label>
+                            <input type="text" id="input-brand-name" class="w-full bg-white border rounded-md p-2 text-sm">
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-600 mb-1">Hero Main Title Line</label>
+                                <input type="text" id="input-hero-title" class="w-full bg-white border rounded-md p-2 text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-600 mb-1">Hero Colored Text Accent</label>
+                                <input type="text" id="input-hero-accent" class="w-full bg-white border rounded-md p-2 text-sm">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-600 mb-1">Hero Sub-description</label>
+                            <textarea id="input-hero-sub" rows="2" class="w-full bg-white border rounded-md p-2 text-sm"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Food Manager Settings -->
+                <div class="bg-gray-50 p-4 rounded-xl border border-gray-200">
+                    <h3 class="font-bold text-gray-800 mb-3 text-sm uppercase tracking-wider">🍲 Menu Items & Images Customizer</h3>
+                    <div id="admin-menu-items-container" class="space-y-4 max-h-[250px] overflow-y-auto pr-2">
+                        <!-- Individual Form Items Generated from JS -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t pt-4 mt-6 flex gap-3">
+                <button onclick="saveAdminData()" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl shadow-md transition cursor-pointer">
+                    💾 Save & Publish Changes
+                </button>
+                <button onclick="resetToDefaultData()" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold px-4 rounded-xl transition cursor-pointer text-xs">
+                    Reset Default
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN APP CONTROLLER JAVASCRIPT -->
+    <script>
+        const defaultData = {
+            config: {
+                primaryColor: "#d97706",
+                fontFamily: "Poppins",
+                whatsappNumber: "923406985205",
+                adminPassword: "1234" // Default password setup
+            },
+            content: {
+                brandName: "🌶️ Desi Cravings",
+                heroTag: "100% Fresh & Homemade",
+                heroTitle: "Ghar Ka Khana, ",
+                heroAccent: "Ghar Ke Pyar Ke Sath",
+                heroSub: "Laziz homemade parathas, authentic nihari, paye, aur chicken curry—ab aap ki dehleez par.",
+                menuTitle: "Aaj Ka Special Menu",
+                menuSubtitle: "Apna pasandida desi khana select karein aur quantity batayein"
+            },
+            menuItems: [
+                { id: "aloo-paratha", name: "Special Aloo Paratha", price: 120, desc: "Makhan se bharpoor, crispy aur chatpata aloo ki stuffing ke sath. Serving with green chutney.", img: "https://images.unsplash.com/photo-1626132647523-66f5bf380027?auto=format&fit=crop&w=600&q=80", type: "Parathas" },
+                { id: "lacha-paratha", name: "Crispy Lacha Paratha", price: 90, desc: "Multiple layers wala khasta paratha jo har salan ka maza dobala kar de.", img: "https://images.unsplash.com/photo-1601050690597-df056fb4ce78?auto=format&fit=crop&w=600&q=80", type: "Parathas" },
+                { id: "chicken-curry", name: "Ghar Ki Chicken Curry", price: 380, desc: "Traditional masalon me paka hua behtareen chicken salan, gravy ke sath.", img: "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=600&q=80", type: "Curry" },
+                { id: "nihari", name: "Shahi Beef Nihari", price: 450, desc: "Dheemi aanch par paki hui gaarhi nihari, adrak, lemon aur sabz mirch ki garnish ke sath.", img: "https://images.unsplash.com/photo-1545247181-516773cae754?auto=format&fit=crop&w=600&q=80", type: "Special" },
+                { id: "paye", name: "Traditional Mutton Paye", price: 520, desc: "Sari raat halki aanch par tayyar kiye gaye chipchipay aur lazeez traditional mutton paye.", img: "https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&w=600&q=80", type: "Special" },
+                { id: "cholay", name: "Lahori Murgh Cholay", price: 220, desc: "Subah ke nashtay ke liye behtareen, masalaydar Lahori murgh chana salan.", img: "https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?auto=format&fit=crop&w=600&q=80", type: "Breakfast" }
+            ]
+        };
+
+        let appData = JSON.parse(localStorage.getItem('desiCravingsData')) || defaultData;
+
+        // Ensure legacy data sets get the password attribute automatically
+        if(!appData.config.adminPassword){
+            appData.config.adminPassword = "1234";
+        }
+
+        function initApp() {
+            document.getElementById('site-title-tag').innerText = appData.content.brandName + " - Homemade Desi Food";
+            document.getElementById('nav-logo').innerText = appData.content.brandName;
+            document.getElementById('footer-logo').innerText = appData.content.brandName;
+            document.getElementById('hero-tag').innerText = appData.content.heroTag;
+            document.getElementById('hero-heading').innerHTML = appData.content.heroTitle + ` <span class="dynamic-primary-text">${appData.content.heroAccent}</span>`;
+            document.getElementById('hero-subheading').innerText = appData.content.heroSub;
+            document.getElementById('menu-title').innerText = appData.content.menuTitle;
+            document.getElementById('menu-subtitle').innerText = appData.content.menuSubtitle;
+
+            const grid = document.getElementById('food-grid');
+            grid.innerHTML = '';
+            
+            appData.menuItems.forEach(item => {
+                const maxQty = item.type === "Parathas" ? 5 : 4;
+                let qtyOptions = '';
+                for(let i=1; i<=maxQty; i++){
+                    qtyOptions += `<option value="${i}">${i} ${item.type === "Parathas" ? 'Paratha' : 'Plate'}${i > 1 ? 's':''}</option>`;
+                }
+
+                grid.innerHTML += `
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition flex flex-col justify-between border border-gray-100">
+                        <div>
+                            <img src="${item.img}" alt="${item.name}" class="w-full h-48 object-cover bg-gray-200">
+                            <div class="p-6">
+                                <div class="flex justify-between items-center mb-2">
+                                    <h4 class="text-xl font-bold text-gray-900">${item.name}</h4>
+                                    <span class="dynamic-primary-text font-bold text-lg">Rs. ${item.price}</span>
+                                </div>
+                                <p class="text-sm text-gray-600 mb-4">${item.desc}</p>
+                                
+                                <label class="block text-xs font-semibold text-gray-500 uppercase mb-1">Quantity:</label>
+                                <select id="qty-${item.id}" class="w-full bg-gray-50 border border-gray-200 rounded-lg p-2 text-sm focus:outline-none">
+                                    ${qtyOptions}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="orderViaWhatsApp('${item.name}', ${item.price}, 'qty-${item.id}')" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2.5 rounded-xl transition flex justify-center items-center gap-2 shadow-md cursor-pointer">
+                                💬 Order via WhatsApp
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            applyColorPalette();
+            buildAdminForm();
+        }
+
+        function applyColorPalette() {
+            document.getElementById('body-layout').style.fontFamily = `'${appData.config.fontFamily}', sans-serif`;
+            const primaryColor = appData.config.primaryColor;
+            document.querySelectorAll('.dynamic-primary-text').forEach(el => el.style.color = primaryColor);
+            document.querySelectorAll('.dynamic-primary-bg').forEach(el => el.style.backgroundColor = primaryColor);
+            document.querySelector('.dynamic-hero-bg').style.backgroundColor = primaryColor + "12"; 
+        }
+
+        function buildAdminForm() {
+            document.getElementById('settings-primary-color').value = appData.config.primaryColor;
+            document.getElementById('settings-font').value = appData.config.fontFamily;
+            document.getElementById('settings-whatsapp').value = appData.config.whatsappNumber;
+            document.getElementById('settings-password').value = appData.config.adminPassword;
+
+            document.getElementById('input-brand-name').value = appData.content.brandName;
+            document.getElementById('input-hero-title').value = appData.content.heroTitle;
+            document.getElementById('input-hero-accent').value = appData.content.heroAccent;
+            document.getElementById('input-hero-sub').value = appData.content.heroSub;
+
+            const itemsContainer = document.getElementById('admin-menu-items-container');
+            itemsContainer.innerHTML = '';
+            
+            appData.menuItems.forEach((item, index) => {
+                itemsContainer.innerHTML += `
+                    <div class="p-3 bg-white rounded-lg border border-gray-200 space-y-2">
+                        <div class="flex justify-between items-center bg-gray-100 p-1.5 rounded">
+                            <span class="text-xs font-bold text-gray-700">${item.name} Setting</span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-2">
+                            <div class="col-span-2">
+                                <label class="text-[10px] block font-medium text-gray-500">Dish Display Name</label>
+                                <input type="text" id="edit-name-${index}" value="${item.name}" class="w-full bg-gray-50 p-1 border rounded text-xs">
+                            </div>
+                            <div>
+                                <label class="text-[10px] block font-medium text-gray-500">Price (PKR)</label>
+                                <input type="number" id="edit-price-${index}" value="${item.price}" class="w-full bg-gray-50 p-1 border rounded text-xs">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="text-[10px] block font-medium text-gray-500">Image Source Link URL</label>
+                            <input type="text" id="edit-img-${index}" value="${item.img}" class="w-full bg-gray-50 p-1 border rounded text-xs text-blue-600 font-mono">
+                        </div>
+                        <div>
+                            <label class="text-[10px] block font-medium text-gray-500">Brief Explanation</label>
+                            <input type="text" id="edit-desc-${index}" value="${item.desc}" class="w-full bg-gray-50 p-1 border rounded text-xs">
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function orderViaWhatsApp(itemName, pricePerItem, selectId) {
+            const quantity = document.getElementById(selectId).value;
+            const totalAmount = pricePerItem * quantity;
+            
+            const message = "Assalam-o-Alaikum! 🍳\n\n" +
+                          `Main *${appData.content.brandName}* website se order place karna chahta hoon:\n\n` +
+                          "▪️ *Item Name:* " + itemName + "\n" +
+                          "▪️ *Quantity:* " + quantity + "\n" +
+                          "▪️ *Total Price:* Rs. " + totalAmount + "\n\n" +
+                          "Kindly mera ye order confirm karein aur delivery time share karein. Shukriya!";
+            
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/${appData.config.whatsappNumber}?text=${encodedMessage}`, "_blank");
+        }
+
+        // --- PASSWORD SECURITY CORE LOGIC ---
+        function checkAdminPassword() {
+            const enteredPassword = prompt("🔐 Please enter Admin Dashboard Security PIN Code:");
+            
+            if (enteredPassword === null) return; // User pressed cancel
+            
+            if (enteredPassword === appData.config.adminPassword) {
+                document.getElementById('admin-panel').classList.remove('hidden');
+            } else {
+                alert("❌ Ghalat Password! Aapko Admin access nahi di ja sakti.");
+            }
+        }
+
+        function closeAdminPanel() {
+            document.getElementById('admin-panel').classList.add('hidden');
+        }
+
+        function updateGlobalStyles() {
+            appData.config.primaryColor = document.getElementById('settings-primary-color').value;
+            appData.config.fontFamily = document.getElementById('settings-font').value;
+            applyColorPalette();
+        }
+
+        function saveAdminData() {
+            appData.config.primaryColor = document.getElementById('settings-primary-color').value;
+            appData.config.fontFamily = document.getElementById('settings-font').value;
+            appData.config.whatsappNumber = document.getElementById('settings-whatsapp').value;
+            
+            // Save new password if entered
+            const newPass = document.getElementById('settings-password').value.trim();
+            if(newPass !== "") {
+                appData.config.adminPassword = newPass;
+            }
+
+            appData.content.brandName = document.getElementById('input-brand-name').value;
+            appData.content.heroTitle = document.getElementById('input-hero-title').value;
+            appData.content.heroAccent = document.getElementById('input-hero-accent').value;
+            appData.content.heroSub = document.getElementById('input-hero-sub').value;
+
+            appData.menuItems.forEach((item, index) => {
+                item.name = document.getElementById(`edit-name-${index}`).value;
+                item.price = parseInt(document.getElementById(`edit-price-${index}`).value) || 0;
+                item.img = document.getElementById(`edit-img-${index}`).value;
+                item.desc = document.getElementById(`edit-desc-${index}`).value;
+            });
+
+            localStorage.setItem('desiCravingsData', JSON.stringify(appData));
+            
+            initApp();
+            closeAdminPanel();
+            alert("✨ Website successfully update ho chuki hai!");
+        }
+
+        function resetToDefaultData() {
+            if(confirm("Kya aap saara data pehle jesa karna chahte hain? Isse aapka custom password bhi reset ho jayega.")) {
+                localStorage.removeItem('desiCravingsData');
+                appData = JSON.parse(JSON.stringify(defaultData));
+                initApp();
+                closeAdminPanel();
+            }
+        }
+
+        window.onload = initApp;
+    </script>
+</body>
+</html>
